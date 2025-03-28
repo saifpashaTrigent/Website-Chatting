@@ -40,7 +40,7 @@ if api_key is None:
 if api_key:
     success_message_html = """
     <span style='color:green; font-weight:bold;'>✅ Powering the Chatbot using Open AI's 
-    <a href='https://platform.openai.com/docs/models/gpt-3-5' target='_blank'>gpt-3.5-turbo-0613 model</a>!</span>
+    <a href='https://platform.openai.com/docs/models/gpt-3-5' target='_blank'>gpt-4o model</a>!</span>
     """
 
     # Display the success message with the link

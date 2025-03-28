@@ -21,7 +21,7 @@ def get_vectorstore_from_url(url):
 
 
 def get_context_retriever_chain(vector_store):
-    llm = ChatOpenAI(model_name="gpt-3.5-turbo-0613", temperature=0)
+    llm = ChatOpenAI(model_name="gpt-4o", temperature=0)
     retriever = vector_store.as_retriever(return_source_documents = True)
     prompt = ChatPromptTemplate.from_messages(
         [
@@ -43,7 +43,7 @@ def get_context_retriever_chain(vector_store):
 
 
 def get_conversational_rag_chain(retriever_chain):
-    llm = ChatOpenAI(model_name="gpt-3.5-turbo-0613", temperature=0)
+    llm = ChatOpenAI(model_name="gpt-4o", temperature=0)
 
     prompt = ChatPromptTemplate.from_messages(
         [
