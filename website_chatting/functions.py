@@ -1,6 +1,6 @@
 from langchain_community.document_loaders import WebBaseLoader
-from langchain.text_splitter import RecursiveCharacterTextSplitter, CharacterTextSplitter
-from langchain_community.vectorstores import Chroma, FAISS
+from langchain.text_splitter import  CharacterTextSplitter
+from langchain_community.vectorstores import  FAISS
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from dotenv import load_dotenv
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
