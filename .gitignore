@@ -4,3 +4,4 @@ __pycache__
 .qodo
 .vscode
 .streamlit/secrets.toml
+.streamlit
