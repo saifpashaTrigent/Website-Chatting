@@ -9,6 +9,7 @@ from PIL import Image
 
 favicon = Image.open("favicon.png")
 
+
 st.set_page_config(
     page_title="GenAI Demo | Trigent AXLR8 Labs",
     page_icon=favicon,
