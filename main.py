@@ -71,11 +71,13 @@ st.sidebar.markdown(logo_html, unsafe_allow_html=True)
 
 
 website_url = st.text_input("Please enter your Website URL and hit enter","https://trigent.com/")
-analyze_button = st.button("Analyze")
-if analyze_button:
-    # Reset chat history and vector store for the new website URL
-    st.session_state.chat_history = [AIMessage(content="Hello, I am a Website chatting bot. How can I help you?")]
-    st.session_state.vector_store = get_vectorstore_from_url(website_url)
+submit_button = st.button("Submit")
+if submit_button:
+    with st.spinner("Analyzing..."):
+        # Reset chat history and vector store for the new website URL
+        st.session_state.chat_history = [AIMessage(content="Hello, I am a Website chatting bot. How can I help you?")]
+        st.session_state.vector_store = get_vectorstore_from_url(website_url)
+
 
 if website_url is None or website_url == "":
     st.info("Please enter a website URL")
@@ -90,9 +92,10 @@ else:
     user_query = st.chat_input("Type your message here...")
 
     if user_query is not None and user_query != "":
-        response = get_response(user_query)
-        st.session_state.chat_history.append(HumanMessage(content=user_query))
-        st.session_state.chat_history.append(AIMessage(content=response))
+        with st.spinner("thinking about it..."):
+            response = get_response(user_query)
+            st.session_state.chat_history.append(HumanMessage(content=user_query))
+            st.session_state.chat_history.append(AIMessage(content=response))
 
     for message in st.session_state.chat_history:
         if isinstance(message, AIMessage):
