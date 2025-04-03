@@ -29,7 +29,7 @@ def get_response(user_input):
     return response["answer"]
 
 
-st.header("WebWhiz - A place where you can chat with any of the websites over the Internet 🌐.")
+st.header("WebWhiz AI- A place where you can chat with any of the websites over the Internet 🌐.")
 
 api_key = st.secrets["OPENAI_API_KEY"]
 
@@ -75,7 +75,7 @@ submit_button = st.button("Submit")
 if submit_button:
     with st.spinner("Analyzing..."):
         # Reset chat history and vector store for the new website URL
-        st.session_state.chat_history = [AIMessage(content="Hello, I am a Website chatting bot. How can I help you?")]
+        st.session_state.chat_history = [AIMessage(content="Hello, I am WebWhiz AI. How can I help you?")]
         st.session_state.vector_store = get_vectorstore_from_url(website_url)
 
 
@@ -84,7 +84,7 @@ if website_url is None or website_url == "":
 else:
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = [
-            AIMessage(content="Hello, I am a Website chatting bot. How can I help you?"),
+            AIMessage(content="Hello, I am a WebWhiz AI. How can I help you?"),
         ]
     if "vector_store" not in st.session_state:
         st.session_state.vector_store = get_vectorstore_from_url(website_url)
