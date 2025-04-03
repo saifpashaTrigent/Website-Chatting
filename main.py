@@ -29,7 +29,7 @@ def get_response(user_input):
     return response["answer"]
 
 
-st.header("A place where you can chat with any of the websites over the Internet 🌐.")
+st.header("WebWhiz - A place where you can chat with any of the websites over the Internet 🌐.")
 
 api_key = st.secrets["OPENAI_API_KEY"]
 
